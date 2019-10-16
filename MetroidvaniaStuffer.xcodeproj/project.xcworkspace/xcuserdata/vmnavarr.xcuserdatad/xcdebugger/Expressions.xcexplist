@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CTransform::addPosition(float, float):CTransform.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Object::update(float):Object.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "TileMapParser::parse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;, sf::Vector2&lt;int&gt;):TileMapParser.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
