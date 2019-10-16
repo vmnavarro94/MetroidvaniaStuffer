@@ -11,7 +11,7 @@
 
 #include "Component.hpp"
 
-class CInstanceId : Component
+class CInstanceId : public Component
 {
 public:
     CInstanceId(Object* owner);

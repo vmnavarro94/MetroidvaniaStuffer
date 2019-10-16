@@ -14,6 +14,7 @@
 
 #include "Object.hpp"
 #include "DrawableSystem.hpp"
+#include "CollidableSystem.hpp"
 
 class ObjectCollection
 {
@@ -38,6 +39,7 @@ private:
     std::vector<std::shared_ptr<Object>> newObjects;
     
     DrawableSystem drawables;
+    CollidableSystem collidables;
 };
 
 #endif /* ObjectCollection_hpp */

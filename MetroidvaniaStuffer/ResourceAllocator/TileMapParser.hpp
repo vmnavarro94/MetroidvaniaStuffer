@@ -20,6 +20,7 @@
 #include "Object.hpp"
 #include "CSprite.hpp"
 #include "Utilities.h"
+#include "CBoxCollider.hpp"
 
 using namespace rapidxml;
 

@@ -14,6 +14,7 @@ void ObjectCollection::update(float deltaTime)
     {
         obj->update(deltaTime);
     }
+    collidables.update();
 }
 
 void ObjectCollection::lateUpdate(float deltaTime)
@@ -55,6 +56,7 @@ void ObjectCollection::processNewObjects()
        
         objects.insert(objects.end(), newObjects.begin(), newObjects.end());
         drawables.add(newObjects);
+        collidables.add(newObjects);
 
         newObjects.clear();
     }
@@ -62,6 +64,7 @@ void ObjectCollection::processNewObjects()
 
 void ObjectCollection::processRemovals()
 {
+    bool removed = false;
     auto objIterator = objects.begin();
     while (objIterator != objects.end())
     {
@@ -70,11 +73,17 @@ void ObjectCollection::processRemovals()
         if (obj->isQueuedForRemoval())
         {
             objIterator = objects.erase(objIterator);
+            removed = true;
         }
         else
         {
-            objIterator++;
+            ++objIterator;
         }
     }
-    drawables.processRemovals();
+    
+    if(removed)
+    {
+        drawables.processRemovals();
+        collidables.processRemovals();
+    }
 }

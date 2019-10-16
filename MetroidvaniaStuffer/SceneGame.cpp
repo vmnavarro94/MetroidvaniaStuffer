@@ -62,6 +62,10 @@ void SceneGame::onCreate()
     
     animation->addAnimation(AnimationState::Walk, walkAnimation);
     
+    auto collider = player->addComponent<CBoxCollider>();
+    collider->setCollidable(sf::FloatRect(0, 0, frameWidth, frameHeight));
+    collider->setLayer(CollisionLayer::Player);
+    
     objects.add(player);
     
     sf::Vector2i mapOffset(-400, 128);

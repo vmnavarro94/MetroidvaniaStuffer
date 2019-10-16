@@ -9,9 +9,11 @@
 #ifndef Object_hpp
 #define Object_hpp
 
+#include <vector>
+
 #include "Window.hpp"
 #include "Component.hpp"
-#include <vector>
+
 #include "CTransform.hpp"
 #include "CDrawable.hpp"
 #include "CInstanceId.hpp"

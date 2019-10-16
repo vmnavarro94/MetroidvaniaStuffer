@@ -75,6 +75,18 @@ TileMapParser::parse(const std::string &file, sf::Vector2i offset)
             float y = tile->y * tileSizeY * tileScale + offset.y;
             tileObject->transform->setPosition(x, y);
             
+            // We only add colliders to the one layer.
+            if (layer.first == "Collisions")
+             {
+                 auto collider = tileObject->addComponent<CBoxCollider>();
+                 float left = x - (tileSizeX * tileScale) * 0.5f;
+                 float top = y - (tileSizeY * tileScale) * 0.5f;
+                 float width = tileSizeX * tileScale;
+                 float height = tileSizeY * tileScale;
+                 collider->setCollidable(sf::FloatRect(left, top, width, height));
+                 collider->setLayer(CollisionLayer::Tile);
+             }
+            
             // Add new tile Object to the collection.
             tileObjects.emplace_back(tileObject);
         }
